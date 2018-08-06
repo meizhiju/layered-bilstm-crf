@@ -145,7 +145,7 @@ class Model(ModelBase):
         ysl = self.l(F.concat(ys, axis=0))
         ysl = F.split_axis(ysl, section, 0)
 
-        inds = xp.argsort(self.xp.array([-x.shape[0] for x in ysl]).astype('i'))
+        inds = xp.argsort(xp.array([-x.shape[0] for x in ysl]).astype('i'))
         ysdes = permutate_list(ysl, inds, inv=False)
 
         batch_ts = tags[index[:, 0]]
@@ -197,7 +197,7 @@ class Model(ModelBase):
         end = xp.matrix(end).transpose()
 
         if self.parameters['gpus']['main'] >= 0:
-            BO_indices = xp.where(self.xp.asnumpy(predicts) % 2 == 0)[0]
+            BO_indices = xp.where(self.xp.asnumpy(predicts.data) % 2 == 0)[0]
         else:
             BO_indices = xp.where(predicts.data % 2 == 0)[0]
 
