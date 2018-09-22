@@ -38,7 +38,7 @@ night  O   O   O
 
 # Pretrained word embeddings
 * Pretrained word embeddings used in GENIA: https://drive.google.com/open?id=0BzMCqpcgEJgiUWs0ZnU0NlFTam8
-* Pretrained word embeddings used in ACE2005:http://tti-coin.jp/data/ace2005-test.txt.gz
+* Pretrained word embeddings used in ACE2005:http://tti-coin.jp/data/wikipedia200.bin
 
 # Configuration
 Parameters are listed in the config file which is located in the layered-bilstm-crf/src folder.
